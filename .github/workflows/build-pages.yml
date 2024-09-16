@@ -16,7 +16,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.repository != 'mrblade/fighost-automation' }}
+    if: ${{ github.repository != 'mrblade/fighost-automation' || github.run_number > 1 }}
 
     steps:
       - name: Checkout the repository
